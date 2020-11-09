@@ -20,6 +20,7 @@ RUN yum update && yum install -y \
   libxcb-devel \
   xcb-util \
   xcb-util-devel \
+  xcb-xinerama0 \
   fontconfig \
   freetype \
   freetype-devel \
