@@ -1,4 +1,4 @@
-FROM scientificlinux/sl7
+FROM scientificlinux/sl:7
 LABEL Maintainer: Tracy Usher
 
 # Install the needed libraries
