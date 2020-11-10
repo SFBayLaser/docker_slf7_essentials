@@ -18,6 +18,8 @@ RUN yum update && yum install -y \
   mesa-libGL \
   libxcb \
   libxcb-devel \
+  libxi6 \
+  libgconf-2-4 \
   xcb-util \
   xcb-util-devel \
   xcb-xinerama0 \
@@ -26,5 +28,9 @@ RUN yum update && yum install -y \
   freetype-devel \
   fontconfig-devel \
   libstdc++ \
+  xorg-x11-libs \
   libxkbcommon-x11
 
+
+# Don't ask ssh confirmation
+RUN sed -i 's/#   StrictHostKeyChecking ask/   StrictHostKeyChecking no/g' /etc/ssh/ssh_config
