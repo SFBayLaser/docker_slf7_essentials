@@ -18,8 +18,8 @@ RUN yum update && yum install -y \
   mesa-libGL \
   libxcb \
   libxcb-devel \
-  libxi6 \
-  libgconf-2-4 \
+  libXi \
+  libXrender \
   xcb-util \
   xcb-util-devel \
   xcb-xinerama0 \
@@ -28,7 +28,6 @@ RUN yum update && yum install -y \
   freetype-devel \
   fontconfig-devel \
   libstdc++ \
-  xorg-x11-libs \
   libxkbcommon-x11
 
 
