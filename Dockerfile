@@ -2,7 +2,7 @@ FROM scientificlinux/sl:7
 LABEL Maintainer: Tracy Usher
 
 # Install the needed libraries
-RUN yum update && yum install -y \
+RUN yum update -y && yum install -y \
   wget \
   redhat-lsb-core \
   perl \
