@@ -6,6 +6,7 @@ RUN yum update -y && yum install -y \
   wget \
   redhat-lsb-core \
   perl \
+  perl-DBD-SQLite \
   openssh-server \
   openssh-clients \
   glibc-devel.i686 \
@@ -16,6 +17,9 @@ RUN yum update -y && yum install -y \
   freetype \
   openssl-devel \
   mesa-libGL \
+  mesa-libGLU \
+  mesa-libGL-devel \
+  mesa-libGLU-devel \
   libxcb \
   libxcb-devel \
   xcb-util \
@@ -58,6 +62,7 @@ RUN  yum install -y \
                  xxhash \
                  xxhash-devel \
                  zstd \
+                 zstd-devel \
                  libAfterImage-devel \
                  libcurl-devel \
                  libjpeg-turbo-devel \
@@ -70,10 +75,8 @@ RUN  yum install -y \
                  libXpm-devel \
                  libXmu-devel \
                  libzstd-devel \
-                 mesa-libGL-devel \
-                 mesa-libGLU-devel \
-                 perl-DBD-SQLite \
-                 perl-ExtU \
+                 libxxhash \
+                 libxxhash-devel \
                  tils-MakeMaker \
                  gcc gcc-c++ \
                  libffi-devel
