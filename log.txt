@@ -1,0 +1,132 @@
+Sending build context to Docker daemon  103.4kB
+Step 1/6 : FROM scientificlinux/sl:7
+ ---> 71edbf98b6a5
+Step 2/6 : LABEL Maintainer: Tracy Usher
+ ---> Using cache
+ ---> c5627b28ed1f
+Step 3/6 : RUN yum update -y && yum install -y   wget   redhat-lsb-core   perl   openssh-server   openssh-clients   glibc-devel.i686   libgcc.i686   libstdc++-devel.i686   ncurses-devel.i686   glibc-devel   freetype   openssl-devel   mesa-libGL   libxcb   libxcb-devel   xcb-util   xcb-util-devel   fontconfig   freetype   freetype-devel   fontconfig-devel   libstdc++   libxkbcommon-x11   libXi   libXrender   libXpm   libXft   libSM
+ ---> Using cache
+ ---> 85bbe140c3ee
+Step 4/6 : RUN  yum install -y                  subversion                  asciidoc                  bzip2-devel                  ftgl-devel                  gdbm-devel                  giflib-devel                  gl2ps-devel                  glew-devel                  openldap-devel                  pcre2-devel                  readline-devel                  autoconf                  automake                  libtool                  lz4-devel                  swig                  texinfo                  tcl-devel                  tk-devel                  xz-devel                  xmlto                  xxhash                  xxhash-devel                  zstd                  libAfterImage-devel                  libcurl-devel                  libjpeg-turbo-devel                  libX11-devel libXe                  xt-devel                  libXft-devel                  libXi-devel                  libXrender-devel                  libXt-devel                  libXpm-devel                  libXmu-devel                  libzstd-devel                  mesa-libGL-devel                  mesa-libGLU-devel                  perl-DBD-SQLite                  perl-ExtU                  tils-MakeMaker                  gcc gcc-c++                  libffi-devel
+ ---> Using cache
+ ---> d5611de46f7c
+Step 5/6 : RUN yum install -y xclock
+ ---> Running in 46b002886c53
+Loaded plugins: ovl
+Resolving Dependencies
+--> Running transaction check
+---> Package xorg-x11-apps.x86_64 0:7.7-7.el7 will be installed
+--> Processing Dependency: libxkbfile.so.1()(64bit) for package: xorg-x11-apps-7.7-7.el7.x86_64
+--> Running transaction check
+---> Package libxkbfile.x86_64 0:1.0.9-3.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package                Arch            Version               Repository   Size
+================================================================================
+Installing:
+ xorg-x11-apps          x86_64          7.7-7.el7             sl          306 k
+Installing for dependencies:
+ libxkbfile             x86_64          1.0.9-3.el7           sl           82 k
+
+Transaction Summary
+================================================================================
+Install  1 Package (+1 Dependent package)
+
+Total download size: 388 k
+Installed size: 950 k
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                              190 kB/s | 388 kB  00:02     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : libxkbfile-1.0.9-3.el7.x86_64                                1/2 
+  Installing : xorg-x11-apps-7.7-7.el7.x86_64                               2/2 
+  Verifying  : libxkbfile-1.0.9-3.el7.x86_64                                1/2 
+  Verifying  : xorg-x11-apps-7.7-7.el7.x86_64                               2/2 
+
+Installed:
+  xorg-x11-apps.x86_64 0:7.7-7.el7                                              
+
+Dependency Installed:
+  libxkbfile.x86_64 0:1.0.9-3.el7                                               
+
+Complete!
+Removing intermediate container 46b002886c53
+ ---> 41b071a8095f
+Step 6/6 : RUN sed -i 's/#   StrictHostKeyChecking ask/   StrictHostKeyChecking no/g' /etc/ssh/ssh_config
+ ---> Running in dd91f7cc9373
+Removing intermediate container dd91f7cc9373
+ ---> fb6674487447
+Successfully built fb6674487447
+Successfully tagged slf7_essentials:latest
+Sending build context to Docker daemon    108kB
+Step 1/6 : FROM scientificlinux/sl:7
+ ---> 71edbf98b6a5
+Step 2/6 : LABEL Maintainer: Tracy Usher
+ ---> Using cache
+ ---> c5627b28ed1f
+Step 3/6 : RUN yum update -y && yum install -y   wget   redhat-lsb-core   perl   openssh-server   openssh-clients   glibc-devel.i686   libgcc.i686   libstdc++-devel.i686   ncurses-devel.i686   glibc-devel   freetype   openssl-devel   mesa-libGL   libxcb   libxcb-devel   xcb-util   xcb-util-devel   fontconfig   freetype   freetype-devel   fontconfig-devel   libstdc++   libxkbcommon-x11   libXi   libXrender   libXpm   libXft   libSM
+ ---> Using cache
+ ---> 85bbe140c3ee
+Step 4/6 : RUN  yum install -y                  subversion                  asciidoc                  bzip2-devel                  ftgl-devel                  gdbm-devel                  giflib-devel                  gl2ps-devel                  glew-devel                  openldap-devel                  pcre2-devel                  readline-devel                  autoconf                  automake                  libtool                  lz4-devel                  swig                  texinfo                  tcl-devel                  tk-devel                  xz-devel                  xmlto                  xxhash                  xxhash-devel                  zstd                  libAfterImage-devel                  libcurl-devel                  libjpeg-turbo-devel                  libX11-devel libXe                  xt-devel                  libXft-devel                  libXi-devel                  libXrender-devel                  libXt-devel                  libXpm-devel                  libXmu-devel                  libzstd-devel                  mesa-libGL-devel                  mesa-libGLU-devel                  perl-DBD-SQLite                  perl-ExtU                  tils-MakeMaker                  gcc gcc-c++                  libffi-devel
+ ---> Using cache
+ ---> d5611de46f7c
+Step 5/6 : RUN yum install -y xclock
+ ---> Running in 88b8d95e8745
+Loaded plugins: ovl
+Resolving Dependencies
+--> Running transaction check
+---> Package xorg-x11-apps.x86_64 0:7.7-7.el7 will be installed
+--> Processing Dependency: libxkbfile.so.1()(64bit) for package: xorg-x11-apps-7.7-7.el7.x86_64
+--> Running transaction check
+---> Package libxkbfile.x86_64 0:1.0.9-3.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package                Arch            Version               Repository   Size
+================================================================================
+Installing:
+ xorg-x11-apps          x86_64          7.7-7.el7             sl          306 k
+Installing for dependencies:
+ libxkbfile             x86_64          1.0.9-3.el7           sl           82 k
+
+Transaction Summary
+================================================================================
+Install  1 Package (+1 Dependent package)
+
+Total download size: 388 k
+Installed size: 950 k
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                              206 kB/s | 388 kB  00:01     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : libxkbfile-1.0.9-3.el7.x86_64                                1/2 
+  Installing : xorg-x11-apps-7.7-7.el7.x86_64                               2/2 
+  Verifying  : libxkbfile-1.0.9-3.el7.x86_64                                1/2 
+  Verifying  : xorg-x11-apps-7.7-7.el7.x86_64                               2/2 
+
+Installed:
+  xorg-x11-apps.x86_64 0:7.7-7.el7                                              
+
+Dependency Installed:
+  libxkbfile.x86_64 0:1.0.9-3.el7                                               
+
+Complete!
+Removing intermediate container 88b8d95e8745
+ ---> 864ac3eacca2
+Step 6/6 : RUN sed -i 's/#   StrictHostKeyChecking ask/   StrictHostKeyChecking no/g' /etc/ssh/ssh_config
+ ---> Running in bd0fe3482688
+Removing intermediate container bd0fe3482688
+ ---> 8928eaf4a74c
+Successfully built 8928eaf4a74c
+Successfully tagged slf7-essentials:latest
