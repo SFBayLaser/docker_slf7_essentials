@@ -16,6 +16,7 @@ RUN yum update -y && yum install -y \
   glibc-devel \
   freetype \
   openssl-devel \
+  epel-release \
   mesa-libGL \
   mesa-libGLU \
   mesa-libGL-devel \
@@ -35,6 +36,25 @@ RUN yum update -y && yum install -y \
   libXpm \
   libXft \
   libSM 
+
+# Does this solve our swrast problem?
+RUN wget http://mirror.centos.org/centos/7/os/x86_64/Packages/mesa-dri-drivers-18.3.4-10.el7.x86_64.rpm && \
+    yum install mesa-dri-drivers-18.3.4-10.el7.x86_64.rpm -y
+
+# Or will this?
+ENV NVIDIA_DRIVER_CAPABILITIES ${NVIDIA_DRIVER_CAPABILITIES},display
+
+RUN yum install -y \
+        git \
+        libXinerama-devel \
+        libXext-devel \
+        libXrandr-devel \
+        libXi-devel \
+        libXcursor-devel \
+        libXxf86vm-devel \
+        vulkan-devel && \
+    rm -rf /var/cache/yum/*
+
 
 # More stuff!
 RUN  yum install -y \
