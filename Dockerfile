@@ -3,39 +3,46 @@ LABEL Maintainer: Tracy Usher
 
 # Install the needed libraries
 RUN yum update -y && yum install -y \
-  wget \
-  redhat-lsb-core \
-  perl \
-  perl-DBD-SQLite \
-  openssh-server \
-  openssh-clients \
-  glibc-devel.i686 \
-  libgcc.i686 \
-  libstdc++-devel.i686 \
-  ncurses-devel.i686 \
-  glibc-devel \
-  freetype \
-  openssl-devel \
-  epel-release \
-  mesa-libGL \
-  mesa-libGLU \
-  mesa-libGL-devel \
-  mesa-libGLU-devel \
-  libxcb \
-  libxcb-devel \
-  xcb-util \
-  xcb-util-devel \
-  fontconfig \
-  freetype \
-  freetype-devel \
-  fontconfig-devel \
-  libstdc++ \
-  libxkbcommon-x11 \
-  libXi \
-  libXrender \
-  libXpm \
-  libXft \
-  libSM 
+        wget \
+        redhat-lsb-core \
+        perl \
+        perl-DBD-SQLite \
+        openssh-server \
+        openssh-clients \
+        glibc-devel.i686 \
+        libgcc.i686 \
+        libstdc++-devel.i686 \
+        ncurses-devel.i686 \
+        glibc-devel \
+        freetype \
+        openssl-devel \
+        epel-release \
+        mesa-libGL \
+        mesa-libGLU \
+        mesa-libGL-devel \
+        mesa-libGLU-devel \
+        libxcb \
+        libxcb-devel \
+        xcb-util \
+        xcb-util-devel \
+        fontconfig \
+        freetype \
+        freetype-devel \
+        fontconfig-devel \
+        libstdc++ \
+        libxkbcommon-x11 \
+        libXi \
+        libXrender \
+        libXpm \
+        libXft \
+        libSM \
+        libXau libXau.i686 \
+        libXdmcp libXdmcp.i686 \
+        libxcb libxcb.i686 \
+        libXext libXext.i686 \
+        libX11 libX11.i686 && \
+    rm -rf /var/chache/yum/* 
+
 
 # Does this solve our swrast problem?
 RUN wget http://mirror.centos.org/centos/7/os/x86_64/Packages/mesa-dri-drivers-18.3.4-10.el7.x86_64.rpm && \
