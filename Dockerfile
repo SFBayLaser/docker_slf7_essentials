@@ -9,10 +9,10 @@ RUN yum update -y && yum install -y \
         perl-DBD-SQLite \
         openssh-server \
         openssh-clients \
-        glibc-devel.i686 \
-        libgcc.i686 \
-        libstdc++-devel.i686 \
-        ncurses-devel.i686 \
+        glibc-devel \
+        libgcc \
+        libstdc++-devel \
+        ncurses-devel \
         glibc-devel \
         freetype \
         openssl-devel \
@@ -36,17 +36,17 @@ RUN yum update -y && yum install -y \
         libXpm \
         libXft \
         libSM \
-        libXau libXau.i686 \
-        libXdmcp libXdmcp.i686 \
-        libxcb libxcb.i686 \
-        libXext libXext.i686 \
-        libX11 libX11.i686 && \
+        libXau \
+        libXdmcp \
+        libxcb  \
+        libXext \
+        libX11 && \
     rm -rf /var/chache/yum/* 
 
 
 # Does this solve our swrast problem?
-RUN wget http://mirror.centos.org/centos/7/os/x86_64/Packages/mesa-dri-drivers-18.3.4-10.el7.x86_64.rpm && \
-    yum install mesa-dri-drivers-18.3.4-10.el7.x86_64.rpm -y
+#RUN wget http://mirror.centos.org/centos/7/os/x86_64/Packages/mesa-dri-drivers-18.3.4-10.el7.x86_64.rpm && \
+#    yum install mesa-dri-drivers-18.3.4-10.el7.x86_64.rpm -y
 
 # Or will this?
 ENV NVIDIA_DRIVER_CAPABILITIES ${NVIDIA_DRIVER_CAPABILITIES},display
@@ -117,4 +117,4 @@ RUN yum install -y xclock
 #    ./checkPrerequisites 
 
 # Don't ask ssh confirmation
-RUN sed -i 's/#   StrictHostKeyChecking ask/   StrictHostKeyChecking no/g' /etc/ssh/ssh_config
+#RUN sed -i 's/#   StrictHostKeyChecking ask/   StrictHostKeyChecking no/g' /etc/ssh/ssh_config
