@@ -117,4 +117,4 @@ RUN yum install -y xclock
 #    ./checkPrerequisites 
 
 # Don't ask ssh confirmation
-#RUN sed -i 's/#   StrictHostKeyChecking ask/   StrictHostKeyChecking no/g' /etc/ssh/ssh_config
+RUN sed -i 's/#   StrictHostKeyChecking ask/   StrictHostKeyChecking no/g' /etc/ssh/ssh_config
