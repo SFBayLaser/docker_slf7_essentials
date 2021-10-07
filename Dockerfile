@@ -1,5 +1,6 @@
 FROM scientificlinux/sl:7
 LABEL Maintainer: Tracy Usher
+# update October 7, 2021
 
 # Install the needed libraries
 RUN yum update -y && yum install -y \
