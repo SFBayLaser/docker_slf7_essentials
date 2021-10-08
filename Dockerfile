@@ -107,7 +107,8 @@ RUN  yum install -y \
                  libxxhash-devel \
                  tils-MakeMaker \
                  gcc gcc-c++ \
-                 libffi-devel
+                 libffi-devel \
+                 perl-Digest-SHA
 
 # xclock
 RUN yum install -y xclock
