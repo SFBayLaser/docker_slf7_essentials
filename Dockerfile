@@ -26,6 +26,8 @@ RUN yum update -y && yum install -y \
         libxcb-devel \
         xcb-util \
         xcb-util-devel \
+        libxcb-iccm4 \
+        libxcb-render-util0 \
         fontconfig \
         freetype \
         freetype-devel \
@@ -39,7 +41,6 @@ RUN yum update -y && yum install -y \
         libSM \
         libXau \
         libXdmcp \
-        libxcb  \
         libXext \
         libX11 && \
     rm -rf /var/chache/yum/* 
