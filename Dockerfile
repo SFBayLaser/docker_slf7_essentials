@@ -22,12 +22,6 @@ RUN yum update -y && yum install -y \
         mesa-libGLU \
         mesa-libGL-devel \
         mesa-libGLU-devel \
-        libxcb \
-        libxcb-devel \
-        xcb-util \
-        xcb-util-devel \
-        libxcb-iccm4 \
-        libxcb-render-util0 \
         fontconfig \
         freetype \
         freetype-devel \
@@ -67,49 +61,58 @@ RUN yum install -y \
 
 # More stuff!
 RUN  yum install -y \
-                 subversion \
-                 asciidoc \
-                 bzip2-devel \
-                 ftgl-devel \
-                 gdbm-devel \
-                 giflib-devel \
-                 gl2ps-devel \
-                 glew-devel \
-                 openldap-devel \
-                 pcre2-devel \
-                 readline-devel \
-                 autoconf \
-                 automake \
-                 libtool \
-                 lz4-devel \
-                 swig \
-                 texinfo \
-                 tcl-devel \
-                 tk-devel \
-                 xz-devel \
-                 xmlto \
-                 xxhash \
-                 xxhash-devel \
-                 zstd \
-                 zstd-devel \
-                 libAfterImage-devel \
-                 libcurl-devel \
-                 libjpeg-turbo-devel \
-                 libX11-devel libXe \
-                 xt-devel \
-                 libXft-devel \
-                 libXi-devel \
-                 libXrender-devel \
-                 libXt-devel \
-                 libXpm-devel \
-                 libXmu-devel \
-                 libzstd-devel \
-                 libxxhash \
-                 libxxhash-devel \
-                 tils-MakeMaker \
-                 gcc gcc-c++ \
-                 libffi-devel \
-                 perl-Digest-SHA
+          subversion \
+          asciidoc \
+          bzip2-devel \
+          ftgl-devel \
+          gdbm-devel \
+          giflib-devel \
+          gl2ps-devel \
+          glew-devel \
+          openldap-devel \
+          pcre2-devel \
+          readline-devel \
+          autoconf \
+          automake \
+          libtool \
+          lz4-devel \
+          swig \
+          texinfo \
+          tcl-devel \
+          tk-devel \
+          xz-devel \
+          xmlto \
+          xxhash \
+          xxhash-devel \
+          zstd \
+          zstd-devel \
+          libAfterImage-devel \
+          libcurl-devel \
+          libjpeg-turbo-devel \
+          libX11-devel libXe \
+          xt-devel \
+          libXft-devel \
+          libXi-devel \
+          libXrender-devel \
+          libXt-devel \
+          libXpm-devel \
+          libXmu-devel \
+          libzstd-devel \
+          libxxhash \
+          libxxhash-devel \
+          tils-MakeMaker \
+          gcc gcc-c++ \
+          libffi-devel \
+          perl-Digest-SHA
+
+# Critical stuff!
+RUN yum install -y \
+        libxcb-iccm4 \
+        libxcb-render-util0 \
+        libxcb \
+        libxcb-devel \
+        xcb-util \
+        xcb-util-devel \
 
 # xclock
 RUN yum install -y xclock
