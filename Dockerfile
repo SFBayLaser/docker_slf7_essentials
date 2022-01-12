@@ -106,14 +106,15 @@ RUN  yum install -y \
           perl-Digest-SHA
 
 # Critical stuff!
-RUN yum install -y \
+RUN yum install reinstall -y \
         libxcb-iccm4 \
         libxcb-render-util0 \
-        libxcb \
+        libxcb-xinerama0 \
         libqxcb \
         libxcb-devel \
         xcb-util \
         xcb-util-devel \
+        libxcb 
 
 # xclock
 RUN yum install -y xclock
