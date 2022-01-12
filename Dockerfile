@@ -110,6 +110,7 @@ RUN yum install -y \
         libxcb-iccm4 \
         libxcb-render-util0 \
         libxcb \
+        libqxcb \
         libxcb-devel \
         xcb-util \
         xcb-util-devel \
