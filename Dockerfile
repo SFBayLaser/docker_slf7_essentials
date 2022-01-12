@@ -107,13 +107,16 @@ RUN  yum install -y \
 
 # Critical stuff!
 RUN yum install reinstall -y \
-        libxcb-iccm4 \
-        libxcb-render-util0 \
-        libxcb-xinerama0 \
-        libqxcb \
+        libxcb-iccm \
+        libxcb-render \
+        libxcb-render-util \
+        libxcb-xinerama \
         libxcb-devel \
+        libxcb-util \
+        libxcb-util-devel \
         xcb-util \
         xcb-util-devel \
+        libqxcb \
         libxcb 
 
 # xclock
