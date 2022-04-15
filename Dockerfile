@@ -19,8 +19,6 @@ RUN yum update -y && yum install -y \
         freetype \
         openssl-devel \
         epel-release \
-        libgl1-mesa-dev \
-        libglvnd-dev \
         libglvnd-opengl \
         #mesa-libGL \
         #mesa-libGLU \
