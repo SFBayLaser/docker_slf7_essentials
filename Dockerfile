@@ -1,10 +1,12 @@
-FROM scientificlinux/sl:7
+FROM scientificlinux/sl:latest
 LABEL Maintainer: Tracy Usher
 # update October 7, 2021
 
 # Install the needed libraries
 RUN yum update -y && yum install -y \
-        wget \
+        wget 
+
+RUN yum update -y && yum install -y \
         redhat-lsb-core \
         perl \
         perl-DBD-SQLite \
@@ -18,6 +20,9 @@ RUN yum update -y && yum install -y \
         freetype \
         openssl-devel \
         epel-release \
+        #libgl1-mesa-dev \
+        #libglvnd-dev \
+        #libglvnd-opengl \
         mesa-libGL \
         mesa-libGLU \
         mesa-libGL-devel \
@@ -41,8 +46,8 @@ RUN yum update -y && yum install -y \
 
 
 # Does this solve our swrast problem?
-#RUN wget http://mirror.centos.org/centos/7/os/x86_64/Packages/mesa-dri-drivers-18.3.4-10.el7.x86_64.rpm && \
-#    yum install mesa-dri-drivers-18.3.4-10.el7.x86_64.rpm -y
+##RUN wget http://mirror.centos.org/centos/7/os/x86_64/Packages/mesa-dri-drivers-18.3.4-10.el7.x86_64.rpm && \
+##    yum install mesa-dri-drivers-18.3.4-10.el7.x86_64.rpm -y
 
 # Or will this?
 ENV NVIDIA_DRIVER_CAPABILITIES ${NVIDIA_DRIVER_CAPABILITIES},display
@@ -106,7 +111,7 @@ RUN  yum install -y \
           perl-Digest-SHA
 
 # Critical stuff!
-RUN yum install reinstall -y \
+RUN yum install -y \
         libxcb-iccm \
         libxcb-render \
         libxcb-render-util \
@@ -115,9 +120,14 @@ RUN yum install reinstall -y \
         libxcb-util \
         libxcb-util-devel \
         xcb-util \
+        xcb-util-wm \
         xcb-util-devel \
-        libqxcb \
+        xcb-util-renderutil \
         libxcb 
+
+# node.js
+RUN curl -sL https://rpm.nodesource.com/setup_14.x | bash - && \
+    yum install -y nodejs
 
 # xclock
 RUN yum install -y xclock
