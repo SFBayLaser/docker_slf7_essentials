@@ -3,8 +3,7 @@ LABEL Maintainer: Tracy Usher
 # update October 7, 2021
 
 # Install the needed libraries
-RUN yum update -y && yum install -y \
-        wget 
+RUN yum update -y && yum install -y wget 
 
 RUN yum update -y && yum install -y \
         redhat-lsb-core \
@@ -20,13 +19,13 @@ RUN yum update -y && yum install -y \
         freetype \
         openssl-devel \
         epel-release \
-        #libgl1-mesa-dev \
-        #libglvnd-dev \
-        #libglvnd-opengl \
-        mesa-libGL \
-        mesa-libGLU \
-        mesa-libGL-devel \
-        mesa-libGLU-devel \
+        libgl1-mesa-dev \
+        libglvnd-dev \
+        libglvnd-opengl \
+        #mesa-libGL \
+        #mesa-libGLU \
+        #mesa-libGL-devel \
+        #mesa-libGLU-devel \
         fontconfig \
         freetype \
         freetype-devel \
