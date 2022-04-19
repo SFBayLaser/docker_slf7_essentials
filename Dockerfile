@@ -14,6 +14,8 @@ RUN yum update -y && yum install -y \
         glibc-devel \
         libgcc \
         libstdc++-devel \
+        mesa-libGL \
+        mesa-dri-drivers \
         ncurses-devel \
         glibc-devel \
         freetype \
