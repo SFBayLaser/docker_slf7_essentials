@@ -38,12 +38,7 @@ RUN yum update -y && yum install -y \
         libX11 && \
     rm -rf /var/chache/yum/* 
 
-
-# Does this solve our swrast problem?
-##RUN wget http://mirror.centos.org/centos/7/os/x86_64/Packages/mesa-dri-drivers-18.3.4-10.el7.x86_64.rpm && \
-##    yum install mesa-dri-drivers-18.3.4-10.el7.x86_64.rpm -y
-
-# Or will this?
+# Not sure if this is really needed to solve swrast issues encountered previously
 ENV NVIDIA_DRIVER_CAPABILITIES ${NVIDIA_DRIVER_CAPABILITIES},display
 
 RUN yum install -y \
@@ -106,18 +101,7 @@ RUN  yum install -y \
 
 # Critical stuff!
 RUN yum install -y \
-        libxcb-iccm \
-        libxcb-render \
-        libxcb-render-util \
-        libxcb-xinerama \
-        libxcb-devel \
-        libxcb-util \
-        libxcb-util-devel \
-        xcb-util \
-        xcb-util-wm \
-        xcb-util-devel \
-        xcb-util-renderutil \
-        libxcb 
+        qt5-qtbase-devel
 
 # node.js
 RUN curl -sL https://rpm.nodesource.com/setup_14.x | bash - && \
@@ -125,11 +109,6 @@ RUN curl -sL https://rpm.nodesource.com/setup_14.x | bash - && \
 
 # xclock
 RUN yum install -y xclock
-
-# what do we still need?
-#RUN wget https://scisoft.fnal.gov/scisoft/bundles/tools/checkPrerequisites && \
-#    chmod +x checkPrerequisites && \
-#    ./checkPrerequisites 
 
 # Don't ask ssh confirmation
 RUN sed -i 's/#   StrictHostKeyChecking ask/   StrictHostKeyChecking no/g' /etc/ssh/ssh_config
