@@ -99,6 +99,11 @@ RUN  yum install -y \
           libffi-devel \
           perl-Digest-SHA
 
+# Make sure we have kerberos
+RUN yum install -y \
+          krb5-libs \
+          krb5-workstation
+
 # Critical stuff!
 RUN yum install -y \
         qt5-qtbase-devel
